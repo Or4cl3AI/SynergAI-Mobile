@@ -1,1 +1,0 @@
-# SynergAI-Mobile

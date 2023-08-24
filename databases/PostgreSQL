@@ -1,0 +1,43 @@
+const Sequelize = require('sequelize');
+const pgPromise = require('pg-promise');
+
+// Create a new instance of Sequelize
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'postgres'
+});
+
+// Define a model for the PostgreSQL database
+const User = sequelize.define('User', {
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+});
+
+// Sync the model with the database
+User.sync()
+  .then(() => {
+    console.log('User model synced with PostgreSQL database');
+  })
+  .catch((error) => {
+    console.error('Error syncing User model with PostgreSQL database:', error);
+  });
+
+module.exports = {
+  sequelize,
+  User
+};
