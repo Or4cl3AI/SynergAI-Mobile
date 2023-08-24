@@ -1,5 +1,3 @@
-# Welcome to smol_developer!
-
 ## SynergAI Mobile
 
 SynergAI Mobile is a cutting-edge mobile operating system that combines human creativity and AI intelligence. It empowers users with seamless interactions and innovative capabilities.
